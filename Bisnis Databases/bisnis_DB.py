@@ -78,6 +78,7 @@ for i in productlinks:
         "harga" : harga,
         "deskripsi" : deskripsi,
         "detail" : detail,
+        "link gambar" : sourceimg[1],
         "link" : i
     }
     

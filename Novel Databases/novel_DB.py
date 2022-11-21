@@ -13,7 +13,7 @@ headers = {
 productlinks = []
 
 for i in range(1,43):
-    r = requests.get(f"https://www.solusibuku.com/novel?page={i}")
+    r = requests.get(f"https://www.solusibuku.com/novel?page={i}",timeout=20)
     soup = BeautifulSoup(r.content, "html.parser")
     lists = soup.find_all('div', class_= "col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12")
     for item in lists:
@@ -26,7 +26,7 @@ for i in range(1,43):
 product = []
 
 for i in productlinks:
-    r = requests.get(i)
+    r = requests.get(i,timeout=20)
     soup = BeautifulSoup(r.content, "html.parser")
 
     try:

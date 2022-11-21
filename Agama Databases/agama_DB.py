@@ -31,7 +31,7 @@ for i in productlinks:
 
     try:
         nama = soup.find('div', class_="ps-product__info").h1.text
-        nama = re.sub(r'[-()\"#/@;:<>{}`+=~|*.!?,]','', nama)
+        nama = re.sub(r'[-()\"#/@;:<>{}`+=~|*.!?,]',' ', nama)
     except:
         nama="no name"
     
@@ -78,6 +78,7 @@ for i in productlinks:
         "harga" : harga,
         "deskripsi" : deskripsi,
         "detail" : detail,
+        "link gambar" : sourceimg[1],
         "link" : i
     }
     
